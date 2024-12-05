@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-Part Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Bar with Hamburger and Search -->
+  <div class="top-bar">
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <input type="text" id="searchBar" class="search-bar" placeholder="Search..." oninput="searchGallery()">
+  </div>
+
+  <!-- Menu Options -->
+  <div id="menuOptions" class="menu-options hidden">
+    <ul>
+      <li>Slideshow</li>
+      <li>Recycle Bin</li>
+      <li>Share</li>
+      <li>File</li>
+    </ul>
+  </div>
+
+  <!-- Gallery Container -->
+  <div id="gallery" class="gallery-container">
+    <!-- Sidebar for categories -->
+    <div id="sidebar" class="sidebar">
+      <h2>Categories</h2>
+      <ul>
+        <li onclick="filterGallery('pictures')">Pictures</li>
+        <li onclick="filterGallery('stories')">Stories</li>
+        <li onclick="filterGallery('albums')">Albums</li>
+      </ul>
+    </div>
+
+    <!-- Main content -->
+    <div id="mainContent" class="main-content">
+      <!-- Folder Container -->
+      <div id="folderContainer" class="folder-container"></div>
+
+      <!-- Image Viewer -->
+      <div id="imageViewer" class="image-viewer" style="display: none;">
+        <button onclick="goBack()" class="back-btn">Back to Folders</button>
+        <h2 id="categoryName" class="category-name"></h2> <!-- Category Name Display -->
+        <h2 id="folderName" class="folder-name"></h2> <!-- Folder Name Display -->
+        <div id="imageContainer" class="image-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
